@@ -1,6 +1,7 @@
 name: iamtxtsignin
 
 on:
+  workflow_dispatch:         # 手动触发
   schedule:
     - cron: '35 22 * * *'    # 在北京时间 6:35 执行 (UTC+8)
 
