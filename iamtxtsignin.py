@@ -2,8 +2,8 @@ import os
 import requests
 import re
 
-# iamtxtCookie = os.environ.get('COOKIE')
-# sendkey = os.environ.get('SENDKEY')
+iamtxtCookie = os.environ.get('COOKIE')
+sendkey = os.environ.get('SENDKEY')
 
 # iamtxtCookie_dict = dict(item.split("=", 1) for item in iamtxtCookie.split("; "))
 
@@ -75,6 +75,6 @@ if __name__ == '__main__':
     signRet = sign_post()
     sctitle = judge_sign(signRet)
     ret = sc_send(sendkey, sctitle, signRet)
-    # print(signRet)
-    # print(sctitle)
+    print(signRet)
+    print(sctitle)
     print(ret)
