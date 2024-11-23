@@ -65,7 +65,7 @@ def sc_send(sendkey, title, desp='', options=None):
 def judge_sign(signRet):
     if signRet.startswith('阅读愉快'):
         sctitle = 'iamtxt 签到成功'
-    elif signRet.startswith('今日已签过了哦'):
+    elif signRet.startswith('今天已'):
         sctitle = 'iamtxt 签到失败 正常'
     else:
         sctitle = 'iamtxt 非正常签到失败'
