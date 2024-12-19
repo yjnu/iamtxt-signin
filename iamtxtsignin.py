@@ -75,5 +75,5 @@ if __name__ == '__main__':
     signRet = sign_post()
     sctitle = judge_sign(signRet)
     ret = sc_send(sendkey, sctitle, signRet)
-    print(f"签到情况: {signRet}")
-    print(f"微信发送情况: {ret}")
+    print(f"iamtxt签到情况: {signRet}")
+    print(f"iamtxt微信发送情况: {ret}")
