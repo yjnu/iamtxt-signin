@@ -4,6 +4,7 @@ import re
 
 hifiniCookie = os.environ.get('HIFINICOOKIE')
 wechatSendkey = os.environ.get('SENDKEY')
+signCode = os.environ.get('SIGN')
 
 signUrl = "https://www.hifini.com/sg_sign.htm"
 
@@ -20,7 +21,7 @@ signHeaders = {
     "user-agent"      : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
 }
 
-payload = {"sign": "5fe0cfe384e093179ad584f6d575001f93114ac7856321215a3c280fa1719f39"}
+payload = {"sign": signCode}
 
 def sign_post():
     sign_respose = requests.post(signUrl, data=payload, headers=signHeaders)
