@@ -1,6 +1,7 @@
 import os
 import requests
 import re
+import json
 
 hifiniCookie = os.environ.get('HIFINICOOKIE')
 wechatSendkey = os.environ.get('SENDKEY')
@@ -64,6 +65,7 @@ def judge_sign(ret_dict):
 
 if __name__ == '__main__':
     signRet = sign_post()
+    signRet = json.loads(signRet)
     sctitle, scmessage = judge_sign(signRet)
     ret = sc_send(wechatSendkey, sctitle, scmessage)
     print(f"签到情况: {scmessage}")
