@@ -27,6 +27,7 @@ jobs:
           COOKIE: ${{ secrets.COOKIE }}
           SENDKEY: ${{ secrets.SENDKEY }}
           HIFINICOOKIE: ${{ secrets.HIFINICOOKIE }}
+          SIGN: ${{ secrets.SIGN }}
         run: |
           python iamtxtsignin.py
           python hifini_sign.py
