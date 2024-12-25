@@ -22,7 +22,7 @@ signHeaders = {
 }
 
 def sign_post():
-    response = requests.get('https://www.hifini.com/sg_sign.htm', headers=signHeaders)
+    response = requests.get(signUrl, headers=signHeaders)
     # print(response.text)
     pattern = r'var sign = "([\da-f]+)"'
     matches = re.findall(pattern, response.text)
