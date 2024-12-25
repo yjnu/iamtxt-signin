@@ -15,20 +15,19 @@
 如果你也想签到，通过你以下三步，就可以每天都有 1 积分到帐。2 积分可下载一本书
 
 1. fork 本项目
-2. 添加四个变量   当前页面 ⇨ Settings ⇨ Secrets ⇨ New repository secret ⇨ Secrets
+2. 添加三个变量   当前页面 ⇨ Settings ⇨ Secrets ⇨ New repository secret ⇨ Secrets
    | 变量名     | 解释                    |
    | ---------- | ----------------------- |
    | COOKIE     | iamtxt 的 cookie        |
    | SENDKEY    | Server 酱的key          |
    | HIFICOOKIE | hifini 的 cookie        |
-   | SIGN       | hifini 登录时 body 的值 |
 3. 测试启用action
 4. 没看明白？看 [这个项目](https://github.com/anduinnn/HiFiNi-Auto-CheckIn) 
 
 > **可能遇见的使用问题**
 >
 > - 可能会失效，所以需要不定期改 cookie
-> - 代码不健壮，两个变量必添加
+> - 代码不健壮，三个变量必添加, 不然无法运行
 
 ## 计划
 
