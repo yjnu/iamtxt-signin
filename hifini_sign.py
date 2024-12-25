@@ -5,7 +5,6 @@ import json
 
 hifiniCookie = os.environ.get('HIFINICOOKIE')
 wechatSendkey = os.environ.get('SENDKEY')
-signCode = os.environ.get('SIGN')
 
 signUrl = "https://www.hifini.com/sg_sign.htm"
 
@@ -22,9 +21,18 @@ signHeaders = {
     "user-agent"      : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
 }
 
-payload = {"sign": signCode}
-
 def sign_post():
+    response = requests.get('https://www.hifini.com/sg_sign.htm', headers=signHeaders)
+    # print(response.text)
+    pattern = r'var sign = "([\da-f]+)"'
+    matches = re.findall(pattern, response.text)
+    if matches:
+        signCode = matches[0]
+    else:
+        if '登录后查看' in response.text:
+            return '{"code": -1, "message": "Hifini Cookie 失效"}'
+        return '{"code": -1, "message": "未匹配到 signCode"}'
+    payload = {"sign": signCode}
     sign_respose = requests.post(signUrl, data=payload, headers=signHeaders)
     sign_ret = sign_respose.text
     return sign_ret
@@ -61,6 +69,8 @@ def judge_sign(ret_dict):
         title = 'hifini 签到成功'
     else:
         title = 'hifini 签到失败'
+        if "操作存在风险" in response_msg:
+            response_msg += " \n没有设置sign导致的!\n"
     return title, response_msg
 
 if __name__ == '__main__':
