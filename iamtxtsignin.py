@@ -3,7 +3,7 @@ import requests
 import re
 
 iamtxtCookie = os.environ.get('COOKIE')
-sendkey = os.environ.get('SENDKEY')
+sendKey = os.environ.get('SENDKEY')
 
 # iamtxtCookie_dict = dict(item.split("=", 1) for item in iamtxtCookie.split("; "))
 
@@ -33,9 +33,9 @@ signHeaders = {
 payload = {"userid": 0}
 
 def sign_post():
-    signRespose = requests.post(signUrl, data=payload, headers=signHeaders)
-    signRet = signRespose.text
-    return signRet
+    sign_respose = requests.post(signUrl, data=payload, headers=signHeaders)
+    sign_ret = sign_respose.text
+    return sign_ret
 
 def sc_send(sendkey, title, desp='', options=None):
     if options is None:
@@ -62,18 +62,18 @@ def sc_send(sendkey, title, desp='', options=None):
     result = response.json()
     return result
 
-def judge_sign(signRet):
-    if signRet.startswith('阅读愉快'):
-        sctitle = 'iamtxt 签到成功'
-    elif signRet.startswith('今天已'):
-        sctitle = 'iamtxt 签到失败 正常'
+def judge_sign(sign_ret):
+    if sign_ret.startswith('阅读愉快'):
+        send_title = 'iamtxt 签到成功'
+    elif sign_ret.startswith('今天已'):
+        send_title = 'iamtxt 签到失败 正常'
     else:
-        sctitle = 'iamtxt 非正常签到失败'
-    return sctitle
+        send_title = 'iamtxt 非正常签到失败'
+    return send_title
 
 if __name__ == '__main__':
     signRet = sign_post()
     sctitle = judge_sign(signRet)
-    ret = sc_send(sendkey, sctitle, signRet)
+    ret = sc_send(sendKey, sctitle, signRet)
     print(f"iamtxt签到情况: {signRet}")
     print(f"iamtxt微信发送情况: {ret}")
