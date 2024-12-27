@@ -95,7 +95,9 @@ def judge_sign(ret_dict):
         title = 'hifini 签到成功'
     else:
         title = 'hifini 签到失败'
-        if "操作存在风险" in response_msg:
+        if "今天已经签过" in response_msg:
+            title = 'hifini 今天已签过'
+        elif "操作存在风险" in response_msg:
             response_msg += " \n没有设置sign导致的!\n"
     return title, response_msg
 

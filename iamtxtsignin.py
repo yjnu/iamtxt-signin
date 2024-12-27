@@ -66,9 +66,9 @@ def judge_sign(sign_ret):
     if sign_ret.startswith('阅读愉快'):
         send_title = 'iamtxt 签到成功'
     elif sign_ret.startswith('今天已'):
-        send_title = 'iamtxt 签到失败 正常'
+        send_title = 'iamtxt 今天已签到'
     else:
-        send_title = 'iamtxt 非正常签到失败'
+        send_title = 'iamtxt 签到失败'
     return send_title
 
 if __name__ == '__main__':
