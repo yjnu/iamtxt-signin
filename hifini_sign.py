@@ -24,15 +24,15 @@ signHeaders = {
 def sign_post():
     response = requests.get(signUrl, headers=signHeaders)
     # print(response.text)
-    pattern = r'var sign = "([\da-f]+)"'
+    pattern = r'var sign = "(.+)"'
     matches = re.findall(pattern, response.text)
     if matches:
-        signCode = matches[0]
+        sign_code = matches[0]
     else:
         if '登录后查看' in response.text:
             return '{"code": -1, "message": "Hifini Cookie 失效"}'
         return '{"code": -1, "message": "未匹配到 signCode"}'
-    payload = {"sign": signCode}
+    payload = { "sign": sign_code }
     sign_respose = requests.post(signUrl, data=payload, headers=signHeaders)
     sign_ret = sign_respose.text
     return sign_ret
