@@ -91,7 +91,7 @@ def sc_send(sendkey, title, desp='', options=None):
 def judge_sign(ret_dict):
     response_code = ret_dict["code"]
     response_msg = ret_dict["message"]
-    if response_code == 0:
+    if response_code == '0':
         title = 'hifini 签到成功'
     else:
         title = 'hifini 签到失败'
