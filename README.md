@@ -8,7 +8,7 @@
 
 - iamtxt 签到，并将签到结果通过 `server酱` 发到微信。脚本非常简单，没难度，入门即会。
 
-- 新增 hifini 自动签到
+- hifini 自动签到
 
 ##  使用方法
 
@@ -19,7 +19,7 @@
    | 变量名     | 解释                    |
    | ---------- | ----------------------- |
    | COOKIE     | iamtxt 的 cookie        |
-   | SENDKEY    | Server 酱的key          |
+   | SENDKEY    | Server 酱的 key         |
    | HIFICOOKIE | hifini 的 cookie        |
 3. 测试启用action
 4. 没看明白？看 [这个项目](https://github.com/anduinnn/HiFiNi-Auto-CheckIn) 
