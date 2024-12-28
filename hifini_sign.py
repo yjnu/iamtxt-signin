@@ -103,9 +103,8 @@ def judge_sign(ret_dict):
 
 if __name__ == '__main__':
     signRet = sign_post()
-    # print(signRet)
     signRet = json.loads(signRet)
     sctitle, scmessage = judge_sign(signRet)
     ret = sc_send(wechatSendkey, sctitle, scmessage)
-    print(f"hifini签到情况: {scmessage}")
+    print(f"hifini签到情况: {signRet}")
     print(f"hifini微信发送情况: {ret}")
