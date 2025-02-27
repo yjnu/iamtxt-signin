@@ -1,9 +1,9 @@
-name: iamtxtsignin
+name: AutoSignIn
 
 on:
   workflow_dispatch:         # 手动触发
   schedule:
-    - cron: '35 22 * * *'    # 在北京时间 6:35 执行 (UTC+8)
+    - cron: '45 22 * * *'    # 在北京时间 6:45 执行 (UTC+8)
 
 jobs:
   run-python-script:

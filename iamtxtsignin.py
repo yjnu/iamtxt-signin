@@ -5,17 +5,7 @@ import re
 iamtxtCookie = os.environ.get('COOKIE')
 sendKey = os.environ.get('SENDKEY')
 
-# iamtxtCookie_dict = dict(item.split("=", 1) for item in iamtxtCookie.split("; "))
-
 signUrl = "https://www.iamtxt.com/e/extend/signin.php"
-
-# cookies = {
-#     "gzepvmlusername": iamtxtCookie_dict["gzepvmlusername"],
-#     "gzepvmluserid": iamtxtCookie_dict["gzepvmluserid"],
-#     "gzepvmlgroupid": iamtxtCookie_dict["gzepvmlgroupid"],
-#     "gzepvmlrnd": iamtxtCookie_dict["gzepvmlrnd"],
-#     "gzepvmlauth": iamtxtCookie_dict["gzepvmlauth"]
-# }
 
 signHeaders = {
     "accept"          : "*/*",
