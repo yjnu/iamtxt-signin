@@ -28,5 +28,4 @@ jobs:
           SENDKEY: ${{ secrets.SENDKEY }}
           HIFINICOOKIE: ${{ secrets.HIFITICOOKIE }}
         run: |
-          python iamtxtsignin.py
           python hifiti_sign.py

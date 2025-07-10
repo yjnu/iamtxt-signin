@@ -62,13 +62,14 @@ def judge_sign(ret_dict):
     response_code = ret_dict["code"]
     response_msg = ret_dict["message"]
     if response_code == '0':
-        title = 'hifiti 签到成功'
+        if "请登录后再签到" in response_msg:
+            title = 'hifiti 签到失败 cookie失效'
+        else:
+            title = 'hifiti 签到成功'
     else:
         title = 'hifiti 签到失败'
         if "今天已经签过" in response_msg:
             title = 'hifiti 今天已签过'
-        elif "操作存在风险" in response_msg:
-            response_msg += "\ncookies 失效？？？\n"
     return title, response_msg
 
 if __name__ == '__main__':
