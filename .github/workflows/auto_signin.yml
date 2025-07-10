@@ -26,6 +26,7 @@ jobs:
         env:
           COOKIE: ${{ secrets.COOKIE }}
           SENDKEY: ${{ secrets.SENDKEY }}
-          HIFINICOOKIE: ${{ secrets.HIFINICOOKIE }}
+          HIFINICOOKIE: ${{ secrets.HIFITICOOKIE }}
         run: |
           python iamtxtsignin.py
+          python hifiti_sign.py
