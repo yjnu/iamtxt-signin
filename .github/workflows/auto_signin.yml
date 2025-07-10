@@ -26,6 +26,6 @@ jobs:
         env:
           COOKIE: ${{ secrets.COOKIE }}
           SENDKEY: ${{ secrets.SENDKEY }}
-          HIFINICOOKIE: ${{ secrets.HIFITICOOKIE }}
+          HIFITICOOKIE: ${{ secrets.HIFITICOOKIE }}
         run: |
           python hifiti_sign.py
