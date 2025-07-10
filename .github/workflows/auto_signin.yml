@@ -29,4 +29,3 @@ jobs:
           HIFINICOOKIE: ${{ secrets.HIFINICOOKIE }}
         run: |
           python iamtxtsignin.py
-          python hifini_sign.py
