@@ -68,6 +68,6 @@ if __name__ == '__main__':
     signRet = sign_post()
     signRet = json.loads(signRet)
     sctitle, scmessage = judge_sign(signRet)
-    # ret = sc_send(wechatSendkey, sctitle, scmessage)
+    ret = sc_send(wechatSendkey, sctitle, scmessage)
     print(f"hifiti签到情况: {signRet}")
-    # print(f"hifiti微信发送情况: {ret}")
+    print(f"hifiti微信发送情况: {ret}")
