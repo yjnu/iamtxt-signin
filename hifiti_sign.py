@@ -9,21 +9,13 @@ wechatSendkey = os.environ.get('SENDKEY')
 signUrl = "https://www.hifiti.com/sg_sign.htm"
     
 signHeaders = {
-    "authority"         : "www.hifiti.com",
     "accept"            : "text/plain, */*; q=0.01",
     "accept-encoding"   : "gzip, deflate, br, zstd",
     "accept-language"   : "zh-CN,zh;q=0.9,en;q=0.8",
     "content-type"      : "application/x-www-form-urlencoded; charset=UTF-8",
     "cookie"            : hifitiCookie,
     "origin"            : "https://www.hifiti.com",
-    "priority"          : "u=1,i",
     "referer"           : "https://www.hifiti.com",
-    'sec-ch-ua'         : '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"',
-    'sec-ch-ua-mobile'  : '?0',
-    'sec-ch-ua-platform': '"Windows"',
-    'sec-fetch-dest'    : 'empty',
-    'sec-fetch-mode'    : 'cors',
-    'sec-fetch-site'    : 'same-origin',
     "x-requested-with"  : "XMLHttpRequest",
     "user-agent"        : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
 }
@@ -76,6 +68,6 @@ if __name__ == '__main__':
     signRet = sign_post()
     signRet = json.loads(signRet)
     sctitle, scmessage = judge_sign(signRet)
-    ret = sc_send(wechatSendkey, sctitle, scmessage)
+    # ret = sc_send(wechatSendkey, sctitle, scmessage)
     print(f"hifiti签到情况: {signRet}")
-    print(f"hifiti微信发送情况: {ret}")
+    # print(f"hifiti微信发送情况: {ret}")
