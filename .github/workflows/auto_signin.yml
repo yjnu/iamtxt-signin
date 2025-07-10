@@ -29,3 +29,4 @@ jobs:
           HIFITICOOKIE: ${{ secrets.HIFITICOOKIE }}
         run: |
           python hifiti_sign.py
+          python iamtxtsignin.py
