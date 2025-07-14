@@ -46,7 +46,7 @@ def sc_send(sendkey, title, desp='', options=None):
     headers = {
         'Content-Type': 'application/json;charset=utf-8'
     }
-    response = requests.post(url, json=params, headers=headers)
+    response = requests.post(url, json=params, headers=headers, timeout=10)
     result = response.json()
     return result
 
