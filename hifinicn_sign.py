@@ -12,11 +12,11 @@ signUrl = "https://www.hifini.com.cn/sg_sign.htm"
 signHeaders = {
     "accept"            : "text/plain, */*; q=0.01",
     "accept-encoding"   : "gzip, deflate, br, zstd",
-    "accept-language"   : "zh-CN,zh;q=0.9,en;q=0.8",
+    "accept-language"   : "zh-CN,zh;q=0.9",
     "content-type"      : "application/x-www-form-urlencoded; charset=UTF-8",
     "cookie"            : hifinicnCookie,
     "origin"            : "https://www.hifini.com.cn",
-    "referer"           : "https://www.hifini.com.cn/sg_sign.htm",
+    "referer"           : "https://www.hifini.com.cn",
     "x-requested-with"  : "XMLHttpRequest",
     "user-agent"        : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
 }
