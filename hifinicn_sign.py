@@ -5,6 +5,7 @@ import json
 
 hifinicnCookie = os.environ.get('HIFINICNCOOKIE')
 wechatSendkey = os.environ.get('SENDKEY')
+print(f"hifinicnCookie: {hifinicnCookie}")
 
 signUrl = "https://www.hifini.com.cn/sg_sign.htm"
 
