@@ -12,7 +12,7 @@
 
 - hifiti 自动签到
 
-- hifinicn 自动签到
+- ~~hifinicn 自动签到~~ GitHub 服务器无法访问, 不能自动签到
 
 ##  使用方法
 
