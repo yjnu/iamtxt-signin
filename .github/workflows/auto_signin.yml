@@ -29,6 +29,4 @@ jobs:
           HIFITICOOKIE: ${{ secrets.HIFITICOOKIE }}
           HIFINICNCOOKIE: ${{secrets.HIFINICNCOOKIE}}
         run: |
-          python hifiti_sign.py
           python hifinicn_sign.py
-          python iamtxtsignin.py
